@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,8 +6,31 @@
     <title>Welcome Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>
+    <script>
+        // Function to ask for cookie consent and redirect based on the response
+        function checkCookieConsent() {
+            var consent = confirm("Vai vēlaties izmantot sīkdatnes?");
+            if (!consent) {
+                // Redirecting to the second page with 'Guest' details
+                window.location.href = "welcome.html?guest=true";
+            }
+        }
+
+        // Function to save preferences
+        function savePreferences() {
+            var name = document.getElementById("name").value;
+            var surname = document.getElementById("surname").value;
+            var color = document.getElementById("color").value;
+
+            document.cookie = "name=" + name + ";path=/";
+            document.cookie = "surname=" + surname + ";path=/";
+            document.cookie = "color=" + color + ";path=/";
+
+            window.location.href = "welcome.html";
+        }
+    </script>
 </head>
-<body>
+<body onload="checkCookieConsent()">
     <h1>Laipni lūgti!</h1>
     <p>Ievadiet savus datus:</p>
     <input type="text" id="name" placeholder="Vārds">

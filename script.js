@@ -1,7 +1,7 @@
 
 // script.js
 
-// Funkcija, lai iegūtu sīkdatni
+// Function to get a cookie
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -13,27 +13,22 @@ function getCookie(name) {
     return null;
 }
 
-// Funkcija, lai ielādētu preferences
+// Function to load preferences
 function loadPreferences() {
-    var name = getCookie("name");
-    var surname = getCookie("surname");
-    var color = getCookie("color");
+    var urlParams = new URLSearchParams(window.location.search);
+    var isGuest = urlParams.get('guest');
 
-    if (name && surname && color) {
-        document.body.style.backgroundColor = color;
-        document.getElementById("welcomeMessage").textContent = "Laipni lūgti, " + name + " " + surname + "!";
+    if (isGuest) {
+        document.body.style.backgroundColor = 'gray';
+        document.getElementById("welcomeMessage").textContent = "Laipni lūgti, Guest!";
+    } else {
+        var name = getCookie("name");
+        var surname = getCookie("surname");
+        var color = getCookie("color");
+
+        if (name && surname && color) {
+            document.body.style.backgroundColor = color;
+            document.getElementById("welcomeMessage").textContent = "Laipni lūgti, " + name + " " + surname + "!";
+        }
     }
-}
-
-// Funkcija, lai saglabātu preferences
-function savePreferences() {
-    var name = document.getElementById("name").value;
-    var surname = document.getElementById("surname").value;
-    var color = document.getElementById("color").value;
-
-    document.cookie = "name=" + name + ";path=/";
-    document.cookie = "surname=" + surname + ";path=/";
-    document.cookie = "color=" + color + ";path=/";
-
-    window.location.href = "welcome.html";
 }
