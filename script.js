@@ -15,23 +15,18 @@ function getCookie(name) {
 
 // Function to load preferences
 function loadPreferences() {
-    var name = getCookie("name") || "Guest";
-    var surname = getCookie("surname") || "";
-    var color = getCookie("color") || "white";
+    var urlParams = new URLSearchParams(window.location.search);
+    var isGuest = urlParams.get('guest');
 
-    document.body.style.backgroundColor = color;
-    document.getElementById("welcomeMessage").textContent = "Sveicināts, " + name + " " + surname + "!";
-}
+    if (isGuest) {
+        document.body.style.backgroundColor = 'gray';
+        document.getElementById("welcomeMessage").textContent = "Sveicināts, Viesi!";
+    } else {
+        var name = getCookie("name") || "Viesi";
+        var surname = getCookie("surname") || "";
+        var color = getCookie("color") || "white";
 
-// Function to save preferences
-function savePreferences() {
-    var name = document.getElementById("name").value;
-    var surname = document.getElementById("surname").value;
-    var color = document.getElementById("color").value;
-
-    document.cookie = "name=" + name + ";path=/";
-    document.cookie = "surname=" + surname + ";path=/";
-    document.cookie = "color=" + color + ";path=/";
-
-    window.location.href = "welcome.html";
+        document.body.style.backgroundColor = color;
+        document.getElementById("welcomeMessage").textContent = "Sveicināts, " + name + " " + surname + "!";
+    }
 }
