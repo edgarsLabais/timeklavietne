@@ -20,7 +20,7 @@ function loadPreferences() {
     var color = getCookie("color") || "white";
 
     document.body.style.backgroundColor = color;
-    document.getElementById("welcomeMessage").textContent = "Welcome, " + name + " " + surname + "!";
+    document.getElementById("welcomeMessage").textContent = "Sveicināts, " + name + " " + surname + "!";
 }
 
 // Function to save preferences
