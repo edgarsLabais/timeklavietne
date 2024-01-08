@@ -8,94 +8,26 @@
     <script src="script.js"></script>
     <script>
         // Function to ask for cookie consent and redirect based on the response
-      //   function checkCookieConsent() {
-       //      var consent = confirm("Vai vēlaties izmantot sīkdatnes?");
-      //       if (!consent) {
+        function checkCookieConsent() {
+           var consent = confirm("Vai vēlaties izmantot sīkdatnes?");
+        if (!consent) {
                 // Redirecting to the second page with 'Guest' details
-      //           window.location.href = "welcome.html?guest=true";
-         //    }
- //        }
+              window.location.href = "welcome.html?guest=true";
+           }
+        }
 
         // Function to save preferences
-//        function savePreferences() {
- //            var name = document.getElementById("name").value;
-  //           var surname = document.getElementById("surname").value;
-  //           var color = document.getElementById("color").value;
+        function savePreferences() {
+           var name = document.getElementById("name").value;
+            var surname = document.getElementById("surname").value;
+            var color = document.getElementById("color").value;
 
-     //        document.cookie = "name=" + name + ";path=/";
-       //      document.cookie = "surname=" + surname + ";path=/";
-       //      document.cookie = "color=" + color + ";path=/";
+           document.cookie = "name=" + name + ";path=/";
+           document.cookie = "surname=" + surname + ";path=/";
+            document.cookie = "color=" + color + ";path=/";
 
-      //       window.location.href = "welcome.html";
-   //     }
-
-    // Function to ask for cookie consent and redirect based on the response
-    function checkCookieConsent() {
-        // Izveido pielāgotu dialoga logu ar vēlamajiem nosaukumiem
-        var consent = customConfirm("Vai vēlaties izmantot sīkdatnes?", "Iesniegt", "Atcelt");
-        if (!consent) {
-            // Redirecting to the second page with 'Guest' details
-            window.location.href = "welcome.html?guest=true";
-        }
-    }
-
-    // Pielāgota funkcija, lai izveidotu dialoga logu ar vēlamajiem pogu nosaukumiem
-    function customConfirm(message, okButtonText, cancelButtonText) {
-        return confirmDialog(message, okButtonText, cancelButtonText);
-    }
-
-    function confirmDialog(message, okButtonText, cancelButtonText) {
-        // Izveido dialoga logu elementu
-        var dialog = document.createElement("div");
-        dialog.className = "custom-dialog";
-        
-        // Izveido dialoga loga saturu
-        var content = document.createElement("p");
-        content.innerHTML = message;
-        dialog.appendChild(content);
-
-        // Izveido "OK" un "Cancel" pogas
-        var okButton = document.createElement("button");
-        okButton.innerHTML = okButtonText;
-        okButton.onclick = function () {
-            dialog.remove();
-            return true;
-        };
-        dialog.appendChild(okButton);
-
-        var cancelButton = document.createElement("button");
-        cancelButton.innerHTML = cancelButtonText;
-        cancelButton.onclick = function () {
-            dialog.remove();
-            return false;
-        };
-        dialog.appendChild(cancelButton);
-
-        // Pievieno dialogu dokumentam
-        document.body.appendChild(dialog);
-
-        // Atgriež rezultātu
-        return false;
-    }
-
-    // Function to save preferences
-    function savePreferences() {
-        var name = document.getElementById("name").value;
-        var surname = document.getElementById("surname").value;
-        var color = document.getElementById("color").value;
-
-        document.cookie = "name=" + name + ";path=/";
-        document.cookie = "surname=" + surname + ";path=/";
-        document.cookie = "color=" + color + ";path=/";
-
-        window.location.href = "welcome.html";
-    }
-
-
-
-
-
-        
+            window.location.href = "welcome.html";
+      }       
     </script>
 </head>
 <body onload="checkCookieConsent()">
