@@ -1,10 +1,12 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
-    <title>Ievades Vietne</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datu Ievades lapa</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+
     <script src="script.js"></script>
     <script>
         // Function to ask for cookie consent and redirect based on the response
@@ -29,17 +31,34 @@
             window.location.href = "welcome.html";
         }
     </script>
+
+	
 </head>
 <body onload="checkCookieConsent()">
-    <h1>Laipni lūgti!</h1>
-    <p>Ievadiet savus datus:</p>
-    <input type="text" id="name" placeholder="Vārds">
-    <input type="text" id="surname" placeholder="Uzvārds">
-    <select id="color">
-        <option value="lightblue">Gaiši zila</option>
-        <option value="lightgreen">Gaiši zaļa</option>
-        <option value="lightpink">Gaiši rozā</option>
-    </select>
-    <button onclick="savePreferences()">Doties tālāk</button>
+	
+	 <header class="header">
+        <h1>Sīkdatņu tests</h1>
+	</header>
+
+
+	<main class="main">
+		<div>
+			<p>Ievadiet savus datus:</p>
+				<input type="text" id="name" placeholder="Vārds">
+				<input type="text" id="surname" placeholder="Uzvārds">
+					<select id="color">
+						<option value="lightblue">Gaiši zila</option>
+						<option value="lightgreen">Gaiši zaļa</option>
+						<option value="lightpink">Gaiši rozā</option>
+					</select>
+			<button onclick="savePreferences()">Doties tālāk</button>
+		</div>
+	 </main>
+	 
+	<footer class="footer">
+        <p>ViA 2023 / 2024 DROŠĪBAS ASPEKTI IKT JOMĀ </p>
+    </footer>
+	
+	
 </body>
 </html>

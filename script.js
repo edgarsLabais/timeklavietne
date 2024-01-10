@@ -20,13 +20,14 @@ function loadPreferences() {
 
     if (isGuest) {
         document.body.style.backgroundColor = 'gray';
-        document.getElementById("welcomeMessage").textContent = "Sveicināts, Viesi!";
+        document.getElementById("welcomeMessage").textContent = "Labdien, Viesi! Vietnē netiek izmantotas sīkdatnes!";
     } else {
         var name = getCookie("name") || "Viesi";
         var surname = getCookie("surname") || "";
         var color = getCookie("color") || "white";
 
         document.body.style.backgroundColor = color;
-        document.getElementById("welcomeMessage").textContent = "Sveicināts, " + name + " " + surname + "!";
+        document.getElementById("welcomeMessage").textContent = "Labdien, " + name + " " + surname + "!";
+	
     }
 }
