@@ -5,3 +5,7 @@ https://edgarslabais.github.io/timeklavietne/index.html
 
 atrādīšanas saite :
 https://edgarslabais.github.io/timeklavietne/welcome.html
+
+vai :
+
+https://edgarslabais.github.io/timeklavietne/apstrade.html
